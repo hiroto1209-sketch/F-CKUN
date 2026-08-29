@@ -1,158 +1,22 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#09090b">
-  <meta name="description" content="F☆☆KUN — 自分らしく生きる反骨系ピクセルキャラクター。会って、触って、一緒に暮らす。">
-  <meta property="og:title" content="F☆☆KUN — DON'T FAKE IT.">
-  <meta property="og:description" content="MEET HIM. KEEP HIM. LIVE WITH HIM.">
-  <meta property="og:type" content="website">
-  <title>F☆☆KUN — DON'T FAKE IT.</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#08090b">
+<title>F☆☆KUN — DON'T FAKE IT.</title><meta name="description" content="F☆☆KUN official character site and interactive pixel pet room.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="image1.css">
 </head>
 <body>
-  <div class="boot" id="boot" aria-hidden="true">
-    <div class="boot__scan"></div>
-    <div class="boot__copy">
-      <div class="boot__micro">ORIGINAL CHARACTER / PIXEL SERIES 001</div>
-      <div class="boot__logo">F<span>☆☆</span>KUN</div>
-      <div class="boot__line"><i id="bootBar"></i></div>
-      <div class="boot__status" id="bootStatus">WAKE HIM UP...</div>
-    </div>
-  </div>
-
-  <div class="noise" aria-hidden="true"></div>
-  <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
-
-  <header class="nav" id="nav">
-    <a class="nav__brand" href="#top" aria-label="F☆☆KUN top">F<span>☆☆</span>KUN</a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="#pet">PET</a><a href="#concept">CONCEPT</a><a href="#profile">PROFILE</a><a href="#world">WORLD</a>
-    </nav>
-    <button class="sound" id="soundToggle" type="button" aria-label="Sound toggle">SOUND <b>OFF</b></button>
-  </header>
-
-  <main id="top">
-    <section class="hero shell">
-      <div class="hero__copy reveal">
-        <div class="eyebrow"><span></span> ORIGINAL CHARACTER / 001</div>
-        <h1 class="display">F☆☆<br><em>KUN</em></h1>
-        <p class="tagline">DON'T FAKE IT.</p>
-        <p class="lead">何を言われても、自分のスタイルは崩さない。<br>無表情で、ちょっと生意気で、でもどこか憎めない。<br><strong>F☆☆KUN</strong> は「自分らしく生きる」を体現する、反骨系ピクセルキャラクター。</p>
-        <div class="hero__actions">
-          <a class="cta cta--primary" href="#pet">KEEP F☆☆KUN <span>↓</span></a>
-          <a class="cta" href="#concept">MEET HIM</a>
-        </div>
-        <div class="hero__ticker" aria-hidden="true"><span>BE YOURSELF</span><span>DO YOUR BEST</span><span>F☆☆K THE REST</span></div>
-      </div>
-
-      <div class="hero__stage reveal" id="heroStage">
-        <div class="orbit orbit--1"></div><div class="orbit orbit--2"></div><div class="orbit orbit--3"></div>
-        <div class="hero__badge">ALIVE / <b id="heroMood">CHILL</b></div>
-        <canvas id="heroPet" width="280" height="580" aria-label="F☆☆KUN pixel character"></canvas>
-        <button class="tapHint" id="heroTap" type="button">TAP HIM <span>✦</span></button>
-      </div>
-    </section>
-
-    <section class="marquee" aria-hidden="true"><div>F☆☆KUN&nbsp; ✦ &nbsp;DON'T LIVE FOR THEIR APPROVAL&nbsp; ✦ &nbsp;F☆☆KUN&nbsp; ✦ &nbsp;KEEP YOUR STYLE&nbsp; ✦ &nbsp;</div></section>
-
-    <section class="petSection" id="pet">
-      <div class="shell petIntro reveal">
-        <div>
-          <div class="kicker">01 / KEEP HIM</div>
-          <h2>HE'S NOT A<br>WALLPAPER.<br><span>HE LIVES HERE.</span></h2>
-        </div>
-        <p>紹介して終わりじゃない。F☆☆KUNをあなたの端末に住まわせる。触る。遊ぶ。食べさせる。寝かせる。離れている間も、彼の時間は進みます。</p>
-      </div>
-
-      <div class="petWorld shell reveal" id="petWorld">
-        <div class="petWorld__top">
-          <div><span class="onlineDot"></span> F☆☆KUN / PRIVATE ROOM</div>
-          <div class="petWorld__day" id="dayLabel">DAY 001</div>
-        </div>
-        <div class="petWorld__grid">
-          <aside class="petPanel petPanel--stats">
-            <div class="panelTitle">STATUS</div>
-            <div class="bigMood"><span id="moodEmoji">-_-</span><b id="moodText">CHILL</b></div>
-            <div class="meterRow"><div><span>FOOD</span><b id="foodVal">80</b></div><div class="meter"><i id="foodBar"></i></div></div>
-            <div class="meterRow"><div><span>LOVE</span><b id="loveVal">76</b></div><div class="meter"><i id="loveBar"></i></div></div>
-            <div class="meterRow"><div><span>ENERGY</span><b id="energyVal">84</b></div><div class="meter"><i id="energyBar"></i></div></div>
-            <div class="currency"><span>POCKET</span><b>★ <span id="coinsVal">120</span></b></div>
-          </aside>
-
-          <div class="room" id="room">
-            <div class="room__sky"><i></i><i></i><i></i><i></i></div>
-            <div class="room__window"><span id="roomMoon">●</span></div>
-            <div class="room__poster">DON'T<br>FAKE<br>IT.</div>
-            <div class="room__shelf"><i></i><i></i><i></i></div>
-            <div class="room__bed"><span></span></div>
-            <div class="room__rug"></div>
-            <div class="speech" id="speech">...</div>
-            <div class="zzz" id="zzz">Z<br><span>Z</span><small>Z</small></div>
-            <canvas id="petCanvas" width="280" height="580" aria-label="Interactive F☆☆KUN"></canvas>
-            <div class="particles" id="particles"></div>
-          </div>
-
-          <aside class="petPanel petPanel--actions">
-            <div class="panelTitle">INTERACT</div>
-            <button class="petAction" data-action="feed" type="button"><span>01</span><b>FEED</b><small>−05 ★ / +FOOD</small></button>
-            <button class="petAction" data-action="pet" type="button"><span>02</span><b>PET</b><small>+LOVE</small></button>
-            <button class="petAction" data-action="play" type="button"><span>03</span><b>PLAY</b><small>−ENERGY / +LOVE</small></button>
-            <button class="petAction" data-action="sleep" type="button"><span>04</span><b id="sleepLabel">SLEEP</b><small>RECOVER</small></button>
-            <button class="petAction petAction--ghost" data-action="gift" type="button"><span>✦</span><b>DAILY STAR</b><small id="giftLabel">CLAIM +15 ★</small></button>
-          </aside>
-        </div>
-        <div class="petWorld__foot"><span>SAVE: AUTO / LOCAL DEVICE</span><span id="lastSeen">JUST NOW</span></div>
-      </div>
-    </section>
-
-    <section class="section shell" id="concept">
-      <div class="sectionHead reveal"><div><div class="kicker">02 / Concept</div><h2>A TINY REBEL<br>IN YOUR POCKET.</h2></div><p>F☆☆KUNは、誰かに好かれるために自分を作り替えない。可愛さだけでも、尖りだけでもない。無表情のまま「それでいい」と言う存在です。</p></div>
-      <div class="cards reveal">
-        <article><span>01</span><h3>REBELLIOUS</h3><p>空気は読む。でも、空気に人生を決めさせない。</p></article>
-        <article><span>02</span><h3>DEADPAN</h3><p>感情を大げさに見せない。だから小さな反応が愛おしい。</p></article>
-        <article><span>03</span><h3>YOUR COMPANION</h3><p>ただ眺めるキャラクターから、毎日会う存在へ。</p></article>
-      </div>
-    </section>
-
-    <section class="section shell" id="profile">
-      <div class="profileGrid reveal">
-        <div class="profileArt">
-          <div class="profileArt__stamp">PIXEL<br>MODEL<br>001</div>
-          <canvas id="profilePet" width="280" height="580"></canvas>
-        </div>
-        <div class="profileCopy">
-          <div class="kicker">03 / Profile</div>
-          <h2>NO SMILE.<br>STILL LOVEABLE.</h2>
-          <dl>
-            <div><dt>NAME</dt><dd>F☆☆KUN</dd></div>
-            <div><dt>TYPE</dt><dd>反骨系 / 無表情 / ストリートキャラクター</dd></div>
-            <div><dt>PERSONALITY</dt><dd>マイペース、少し皮肉屋、意外と優しい。群れないけど孤独が好きなわけでもない。</dd></div>
-            <div><dt>FASHION</dt><dd>White tee / Black wide pants / Classic sneakers</dd></div>
-            <div><dt>COLOR</dt><dd>Ivory / Black / White / Gray</dd></div>
-            <div><dt>MOTTO</dt><dd>BE YOURSELF. DO YOUR BEST. F☆☆K THE REST.</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <section class="manifest" id="world">
-      <div class="shell reveal">
-        <div class="kicker">04 / Manifesto</div>
-        <p class="manifest__quote">“DON'T LIVE<br>FOR <em>THEIR</em><br>APPROVAL.”</p>
-        <p class="manifest__copy">誰かに認められるためじゃない。自分の好きなものを好きと言うために生きる。<br>F☆☆KUNは、そんな小さな反抗心を肯定するキャラクターです。</p>
-      </div>
-    </section>
-
-    <section class="section shell ecosystem">
-      <div class="sectionHead reveal"><div><div class="kicker">05 / Universe</div><h2>ONE ICON.<br>MANY WORLDS.</h2></div><p>ペット体験を核に、ゲーム、アパレル、グッズ、ショートアニメ、コラボへ。キャラクターの人格と日常を中心に世界を広げていく設計です。</p></div>
-      <div class="worldGrid reveal"><article><b>01</b><span>DIGITAL PET</span><small>LIVE WITH HIM</small></article><article><b>02</b><span>MINI GAMES</span><small>PLAY WITH HIM</small></article><article><b>03</b><span>APPAREL</span><small>WEAR HIS ATTITUDE</small></article><article><b>04</b><span>STORIES</span><small>KNOW HIS WORLD</small></article></div>
-    </section>
-  </main>
-
-  <footer class="footer shell"><div>© F☆☆KUN CHARACTER PROJECT</div><div>PIXEL SERIES 001 / DON'T FAKE IT.</div></footer>
-  <script src="app.js"></script>
-</body>
-</html>
+<div class="noise"></div><div class="floaters" id="floaters"></div><img id="fckunAsset" src="fckun-character.svg" hidden alt="">
+<header class="topbar"><div class="topbar__in"><a href="#home" class="logo">F<i>☆☆</i>KUN</a><nav class="navlinks"><a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#world">WORLD</a><a href="#pet">PET ROOM</a><a href="#gallery">GALLERY</a><a href="#shop">SHOP</a><a href="#news">NEWS</a></nav><button class="soundBtn" id="soundBtn">✦ SOUND OFF 〽</button></div></header>
+<main>
+<section class="hero" id="home"><div class="skyDots"></div><div class="city"></div><div class="wrap heroGrid">
+<div class="heroCopy"><div class="pill">DON'T FAKE IT.</div><h1 class="mega">F<span>☆☆</span>KUN</h1><p class="jpTag">自分らしく生きる、反骨のピクセル。</p><p>F☆☆KUNは、常識や偽りに縛られない。<br>クールで、無表情で、どこか憎めないヤツ。<br><b>今日もマイペースに、好きなように生きてる。</b></p><div class="heroBtns"><a class="btn primary" href="#pet">PET ROOMへ入る　→</a><a class="btn" href="#about">F☆☆KUNについて　›</a></div><div class="scrollMark">SCROLL</div></div>
+<div class="heroChar"><img class="fckun-img" id="heroChar" alt="F☆☆KUN"></div>
+<aside class="profileBox" id="about"><h3>PROFILE</h3><div class="profileName">F☆☆KUN</div><div class="specs"><div><b>TYPE</b><span>反骨系ペット</span></div><div><b>HEIGHT</b><span>ちょうどいい</span></div><div><b>WEIGHT</b><span>ひみつ</span></div><div><b>BIRTHDAY</b><span>いつでも</span></div><div><b>LIKES</b><span>自由 / 音楽 / 寝ること</span></div><div><b>HATES</b><span>偽り / つまらないルール</span></div></div><div class="statusRow"><h4>STATUS</h4><div class="miniSprites"><img class="fckun-img" alt=""><img class="fckun-img" alt=""><img class="fckun-img" alt=""><img class="fckun-img" alt=""><img class="fckun-img" alt=""></div></div></aside>
+</div></section>
+<section class="petBand" id="pet"><div class="wrap petBandIn"><div class="petTitle"><div class="homeIcon">⌂</div><div><b>PET ROOM</b><small>F☆☆KUNと一緒の時間</small></div></div><div class="hudStats"><div class="hud"><div class="hudTop"><span>🍔 FOOD</span><em><span id="foodVal">78</span> /100</em></div><div class="hudBar"><i id="foodBar"></i></div></div><div class="hud love"><div class="hudTop"><span>♥ LOVE</span><em><span id="loveVal">86</span> /100</em></div><div class="hudBar"><i id="loveBar"></i></div></div><div class="hud energy"><div class="hudTop"><span>ϟ ENERGY</span><em><span id="energyVal">62</span> /100</em></div><div class="hudBar"><i id="energyBar"></i></div></div><div class="hud star"><div class="starIcon">★</div><div><small>STAR</small><div class="starCount" id="starCount">1,250</div></div></div></div><button class="menuBtn">☰　MENU</button></div></section>
+<section class="roomSec" id="world"><div class="roomScene"><div class="window"></div><div class="poster">DON'T<br>FAKE<br>IT.</div><div class="lamp"></div><div class="bed"></div><div class="desk"></div><div class="neon">F☆☆KUN</div><div class="rug"></div><div class="speech show" id="speech">よう。<br><span id="moodLine">今日も自分らしくいこーぜ。</span></div><img class="roomChar fckun-img" id="roomChar" alt="F☆☆KUN pixel pet"></div>
+<div class="wrap actionsRow"><button class="actionCard" data-action="feed"><span class="actionIcon">🍔</span><span><b>FEED</b><small>ごはんをあげる</small><em>−20 ★</em></span></button><button class="actionCard" data-action="pet"><span class="actionIcon">✋</span><span><b>PET</b><small>なでる</small><em>+10 LOVE</em></span></button><button class="actionCard" data-action="play"><span class="actionIcon">🎮</span><span><b>PLAY</b><small>いっしょに遊ぶ</small><em>−15 ENERGY</em></span></button><button class="actionCard" data-action="sleep"><span class="actionIcon">🛏</span><span><b id="sleepText">SLEEP</b><small>寝かせる</small><em>+ ENERGY</em></span></button><button class="actionCard" data-action="daily"><span class="actionIcon">★</span><span><b>DAILY STAR</b><small>★をもらう</small><em>1日1回</em></span></button></div></section>
+<section class="wrap infoGrid" id="news"><article class="infoBox"><h3>⌂ WHAT'S NEW　<small>NEW</small></h3><div class="newsItem"><img class="fckun-img" alt=""><span>・F☆☆KUNの公式サイトがオープン！<br>・PET ROOMで一緒に過ごせるようになった。<br>・これからも色んなことが起こるから見逃すなよ。</span></div></article><article class="infoBox" id="gallery"><h3>⌂ GALLERY</h3><div class="galleryMini"><div><img class="fckun-img" alt=""></div><div><img class="fckun-img" alt=""></div><div><img class="fckun-img" alt=""></div><div><img class="fckun-img" alt=""></div></div></article><article class="infoBox" id="shop"><h3>⌂ FOLLOW F☆☆KUN</h3><div class="social"><span>𝕏</span><span>◎</span><span>♪</span><span>▶</span></div><button class="shareBtn">F☆☆KUNをシェアする　⌯</button></article></section>
+</main><footer class="footer">© 2026 F☆☆KUN ALL RIGHTS RESERVED.</footer><script src="image1.js"></script>
+</body></html>
